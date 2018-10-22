@@ -1,7 +1,6 @@
-var = brotherWords ["Lazarus", "Candy", "Sunshine", "River", "Sorrow", "Blues", "Man", "Side", "Away", "Baby", "Highways", "Weary", "Death", "Jailhouse", "Whoop", "Valley", "Angel"];
-var maxGuessCount = 13;
+var maxGuessCount = 10;
 
-var words = brotherWords;
+var brother = brotherCol;
 var isPlaying = false;
 var wins = 0;
 var loss = 0;
@@ -28,7 +27,7 @@ function setDisplay() {
         if (letter === " ") {
             word += " ";
 
-        } else if (good.includes(letter.toUpperCase())) {
+        } else if (good.includes(letter.toLowerCase())) {
 
             word += letter;
         } else {
@@ -54,7 +53,7 @@ function setDisplay() {
 }
 
 document.onkeyup = function (event) {
-    var key = event.key.toUpperCase();
+    var key = event.key.toLowerCase();
     if(!isPlaying){
         resetGameState();
         setDisplay();
@@ -66,10 +65,10 @@ document.onkeyup = function (event) {
     if (!key.match("[a-z]")) {
         return;
     }
-    else if (!good.includes(key) && answer.toUpperCase().includes(key)) {
+    else if (!good.includes(key) && answer.toLowerCase().includes(key)) {
         good.push(key);
     }
-    else if (!bad.includes(key) && !answer.toUpperCase().includes(key)){
+    else if (!bad.includes(key) && !answer.toLowerCase().includes(key)){
         bad.push(key);
     }
     setDisplay();
@@ -80,39 +79,39 @@ function gameWin() {
     document.getElementById("game-img").src = image;
     wins++;
     isPlaying = false;
-    remove(words, answer);
+    remove(brother, answer);
     //playAudio(answer);
     document.getElementById("commentTag").style.visibility = "visible";
 }
 function remove(){
     var newcol =[];
-    words.forEach(item => {
+    brother.forEach(item => {
         if(item != answer){
             newcol.push(item);
         }
     });
-    words = newcol;
+    brother = newcol;
 }
 
 function resetGameState(){
     bad = [];
     good = [];
-    if(words.length<1){
-        resetWords();
+    if(brother.length<1){
+        resetBrother();
     }
-    answer = words[Math.floor(Math.random() * words.length)];
+    answer = brother[Math.floor(Math.random() * brother.length)];
     isPlaying = true;
     
 }
 
-function resetWords(){
-    words = brotherWords;
+function resetBrother(){
+    brother = brotherCol;
 }
 
 function gameLoss() {
     isPlaying = false;
     loss++;
-    remove(words, answer);
+    remove(brother, answer);
     document.getElementById("commentTag").style.visibility = "visible";
     var image = "./assets/images/loss.jpg";
     document.getElementById("game-img").src = image;
