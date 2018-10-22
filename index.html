@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--Favicon-->
+    <link rel="icon" href="./assets/images/o_brother_where_art_thou.png">
+    <!--Style-->
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/javascript/game.js"></script>
+
+</head>
+<body>
+        <div class="gameName">Movie
+                <br> Hangman</div>
+            <p class="text tag center" id="commentTag">Press any key to start!</p>
+            <div class="game-body">
+                <section class="display-zone">
+                    <img id="game-img" class="center" src="./assets/images/hanging.jpg">
+                </section>
+        
+                <aside class="guess-zone">
+                    <p class="text center">Wins:
+                        <span id="wins"></span>
+                    </p>
+                    <p class="text center">Missed:
+                        <span id="miss"></span>
+                    </p>
+                    <br>
+                    <p id="current-word" class="text center"> </p>
+                    <br>
+                    <p class="text center">Remaining Guesses</p>
+                    <p id="guesses-left" class="text center"> </p>
+                    <br>
+                    <p class="text center">Guesses Made</p>
+                    <p id="guesses-made" class="text center"> </p>
+        
+                </aside>
+            </div>
+        
+            <script src="./assets/javascript/game.js"></script>
+    
+</body>
+</html>

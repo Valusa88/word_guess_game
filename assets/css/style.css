@@ -1,0 +1,92 @@
+:root{
+    --background-color: black;
+    --border-color: white;
+    --maxHeight: 400px;
+    --color: white;
+    --font-family: 'Gloria Hallelujah', cursive;
+    --answer-font-family: 'Luckiest Guy', cursive;
+    --title-font-family: 'Gravitas One', cursive;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--color);
+    font-family: var(--font-family);
+    background-image: url("../images/back.jpg");
+    background-position: fill;
+    background: responsive;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gameName{
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+    margin: 45px 0px 20px 0px;
+    text-align: center;
+    font-family: var(--title-font-family);
+    background-color: black;
+    background-size: auto;
+}
+
+.game-body{
+    
+    width: 518px;
+    height: var(--maxHeight);
+    margin: 60px auto;
+    margin-bottom: 0px;
+}
+
+.guess-zone,
+.display-zone
+{
+    border-style: solid;
+    border-color: var(--border-color);
+    border-width: 2px;
+}
+
+.guess-zone,
+.display-zone{
+    float: left;
+    width: 250px;
+    height: var(--maxHeight);
+    
+}
+
+.display-zone{
+    height: auto;
+    margin-right: 10px;
+}
+
+
+.text{
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+    opacity: 1;
+    color: var(--color);
+}
+
+.tag{
+    color: rgb(112, 111, 111);
+    font-style: italic;
+}
+
+.center{
+    margin: 5px;
+}
+
+#game-img{
+    width: 240px;
+
+}
+
+#current-word{    
+    font-size: 30px;
+    font-family: var(--answer-font-family);
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+}
