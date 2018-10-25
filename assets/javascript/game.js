@@ -2,6 +2,7 @@ var maxGuessCount = 10;
 
 var brother = brotherCol;
 var isPlaying = false;
+var isPlaying = true;
 var wins = 0;
 var loss = 0;
 var good = [];
@@ -118,7 +119,20 @@ function gameLoss() {
 }
 
 function playAudio(name){
+    var name = answer;
     //need to get audio files
-    var audio = new Audio("./assets/audio/" + name + ".mp3");
+    var audio = new Audio("./assets/audio/" + name + ".flac");
     audio.play();   
+}
+function playSound(src){
+    var audio_lib = audio("./assets/audio/" + answer + ".flac");
+    var audio = document.createElement('audio');
+    audio.style.display = "none";
+    audio.src = audio_lib;
+    // audio.autoplay = true;
+    // console.log(audio);
+    audio.play();
+    audio.onended = function(){
+      audio.remove(); //Remove when played.
+    }
 }
