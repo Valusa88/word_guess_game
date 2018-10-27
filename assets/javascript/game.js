@@ -1,3 +1,4 @@
+var brotherCol = ["Lazarus", "Candy", "Sunshine", "River", "Sorrow", "Blues", "Man", "Side", "Away", "Baby", "Highways", "Weary", "Death", "Jailhouse", "Whoop", "Valley", "Angel"];
 var maxGuessCount = 10;
 
 var brother = brotherCol;
@@ -84,6 +85,10 @@ function gameWin() {
     //playAudio(answer);
     document.getElementById("commentTag").style.visibility = "visible";
 }
+function playAudio(){
+     //need to get audio files
+    var audio = "./assets/audio/" + answer + ".flac";
+}
 function remove(){
     var newcol =[];
     brother.forEach(item => {
@@ -118,21 +123,4 @@ function gameLoss() {
     document.getElementById("game-img").src = image;
 }
 
-function playAudio(name){
-    var name = answer;
-    //need to get audio files
-    var audio = new Audio("./assets/audio/" + name + ".flac");
-    audio.play();   
-}
-function playSound(src){
-    var audio_lib = audio("./assets/audio/" + answer + ".flac");
-    var audio = document.createElement('audio');
-    audio.style.display = "none";
-    audio.src = audio_lib;
-    // audio.autoplay = true;
-    // console.log(audio);
-    audio.play();
-    audio.onended = function(){
-      audio.remove(); //Remove when played.
-    }
-}
+
