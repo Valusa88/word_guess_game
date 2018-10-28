@@ -82,6 +82,12 @@ function gameWin() {
     wins++;
     isPlaying = false;
     remove(brother, answer);
+    //playAudio(answer);
+    document.getElementById("commentTag").style.visibility = "visible";
+}
+function playAudio(){
+     //need to get audio files
+    var audio = "./assets/audio/" + answer + ".flac";
 }
 function remove(){
     var newcol =[];
